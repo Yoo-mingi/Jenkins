@@ -1,0 +1,33 @@
+Jib은 Docker데몬없이, 그리고 Docker 권장사항에 대한 깊은 숙달없이 Java에 최적화된 Docker및 OCI이미지를 빌드. Maven및 Gradle용 플러그과 자바 라비으로러리로 사용가능.
+
+홈페이지 : https://github.com/GoogleContainerTools/jib
+
+Jib의 특징 : 
+빠른 Docker 이미지 빌드 및 배포가능
+애플리케이션을 여러 레이어로 분리하여 클래스 종속성을 분리해 변경된 레이어만 배포가 가능
+Docker데몬이나 Docker CLI가 없어도 Gradle내에 Docker이미지를 빌드 및 push 가능
+
+JIB과 기존 DOCKERFILE비교:
+DOCKER : Project(안에 Dockerfile 필수) -> build -> container Images -> Container Image
+Jib : Projent -> Container Image
+
+Jib 플러그인 설정 : 
+plugins { id 'java' id'org...' }
+Jib 설정 : 
+Jib {
+    from {
+        image = '....'
+    }
+    to {
+        ...
+    }
+}
+
+
+
+(1) 명령을 실행하여 Ubuntu 리눅스에 PPA 저장소를 추가
+$ sudo apt -y install vim apt-transport-https dirmngr wget software-properties-common
+$ sudo add-apt-repository ppa:cwchien/gradle
+(2) Ubuntu 리눅스 패키지 업데이트 및 Gradle을 7이상 버전으로 설치
+$ sudo sudo apt-get update
+$ sudo sudo apt -y install gradle

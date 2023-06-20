@@ -1,0 +1,16 @@
+Gradle은 Groovy를 이용한 빌드 자동화 시스템이다. 안드로이드 스튜디오의 공식 빌드시스템이기도하며, C,AJVA,C# 등 다양한 언어제공.
+
+수행단계 :
+1. 초기화단계:Gradle에 빌드할 프로젝트를 설정
+2. 구성단계:프로젝트 객게가 구성. 여기서 빌드에 포함할 프로젝트의 빌드 스크립트 및 Task 작성
+3. 실행단계:Gradle의 모든 Task를 통합
+
+Gradle의 구조:
+app-build.gradle
+gradle-wrapper-properties
+
+Build.gradle : 프로젝트 내 소스코드에 대한 라이브러리 의존성, 플러그린, 라이브저장소등을 설정할 수 있는 스크립트 파일
+setting.gradle : 프로젝트의 구성 정보 파일
+gradlew : 리눅스 또는 맥OS용 그래들 실행 쉘 스크립트
+gradlew.bat : 윈도우용 실행 배치 스크립트 파일
+gradle 디렉토리 : gradle-wrapper 관련 파일들이 존재. 이 파일들은 gradlew라는 랩퍼 파일을 실행시키기 위해 필요한 파일
