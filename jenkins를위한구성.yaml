@@ -1,0 +1,16 @@
+Jenkins 설치 명령어 목록
+• Jenkins 컨테이너 실행 명령어 :
+$ docker run --name jenkins -d -p 8080:8080 -v ~/jenkins:/var/jenkins_home
+-u root jenkins/jenkins:latest
+• Admin Password 확인 명령어 :
+$ docker exec -it jenkins bash -c "cat 
+/var/jenkins_home/secrets/initialAdminPassword"
+
+그후 컨테이너에 올리든 노드-파드로 올리던 VM에 올리던 어캐어캐해서 들어간 이후에 설정하면 댐.
+
+해야할 것 : Timezone Setting
+대시보드에 플러그인 설치 : System config plugins
+
+installs plugins > avaliable plugins > jokb dsl, pipeline(라이브러러,, 데티클레어티브, 유틸리스탭스, 빌드), docker(도커, 도커커먼스, 파이브라인, 빌드), github(깃헙 인티그레이션, 어센티케이션, 파이프라인, 레포), aws(크레넨셜, 파이프라인, 아마존zcr). ssh(퍼플리쉬 ssh ssh파이브라인)  
+
+인증설정 : 매니지 크레덴셜스 > 글로벌 그레덴셜 > 에드 크레덴셜에서 public key 삽입.

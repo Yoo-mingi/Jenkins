@@ -1,0 +1,9 @@
+ssh-keygen -t ed25519 -a 100 -f ssh-key
+
+cat ssh-key
+> 프라이빗 키
+
+cat ssh-key.pub
+> 퍼블릭 키
+
+깃허브 > Settings > Deploy keys > add deploy key > title ssh-key > key = pub 내용 복붙
