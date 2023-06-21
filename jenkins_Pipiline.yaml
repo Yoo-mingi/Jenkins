@@ -1,0 +1,39 @@
+진행 :
+개발자(사용자)가 코드를 커밋(github). 그 후에 젠킨스 가동시 그 코드를 젠킨스가 풀로 가져옴. 그 후에 include gradle를 사용해 빌드. 해당 빌드코드는 artifact repository를 통해 의존성은 다운받고 jib으로 이미지 생성.
+그 후 이미지를 ECR로 푸쉬하고 EC2 를 통해 ECR이미지를 풀하고, 풀이 완료된 이미지를 통해 컨테이너 생성.
+
+pipeline {
+  agent any
+
+  stages {
+    stage("첫번쨰스테이지 깃헙 풀"){
+      steps{
+        checkout scm
+      }
+    }
+
+    stage("두번째 빌드"){
+      steps{
+        sh """
+        cd ${maindir}
+        ./gradlew clean build
+        """
+      }
+    }
+
+    strage("세번째 "){
+      steps{
+        ....
+      }
+    }
+    .........
+
+
+
+
+
+
+
+
+  }
+}
